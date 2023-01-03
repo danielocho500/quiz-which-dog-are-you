@@ -1,25 +1,78 @@
-import logo from './logo.svg';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import { Question } from './components/Question';
+import { questions } from './questions';
+import Swal from 'sweetalert2'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    const [isActive, setIsActive] = useState(0)
+    const [idFocus, setIdFocus] = useState(0);
+    const idFocusModified = useRef(false);
+    
+    useEffect(() => {
+      if(idFocusModified.current){
+        try{
+          const element = document.getElementById(idFocus)
+          element.scrollIntoView({behavior: 'smooth'});
+        }
+        catch{
+          const element = document.getElementById('btn_dog');
+          element.scrollIntoView({behavior: 'smooth'});
+        }
+      }
+      else{
+        idFocusModified.current = true;
+      }
+    
+    }, [idFocus])
+    
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      let isCorrect = true;
+
+      questions.every(quest => {
+        try{
+          const q = document.querySelector(`input[name="${quest.id}"]:checked`).value;
+          return true;
+        }
+        catch{
+          isCorrect = false;
+          setIsActive(quest.id)
+          setIdFocus(quest.id)
+          const element = document.getElementById(quest.id)
+          element.scrollIntoView({behavior: 'smooth'});
+          return false;
+        }  
+      })
+      if(isCorrect){
+        console.log('esoo');
+      }
+    }
+
+    return (
+      <div className="App">
+        <div className='top'>
+          <Header />
+        </div>
+
+        <form>
+          {questions.map(({ id, title }) => (
+            <Question key={ id } title={ title } isActive={ (isActive === id) } setIsActive={ setIsActive } id= {id} setIdFocus={setIdFocus}/>
+          ))}
+
+          <div className='container__perso btn_cont'>
+            <input type={'submit'} value="Calcular" className='btn_dog' id='btn_dog' onClick={handleSubmit}/>
+          </div>
+
+        </form>
+        
+      </div>
   );
 }
+
 
 export default App;

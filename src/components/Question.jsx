@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const Question = (props) => {
 
-    const { isActive, title, id, setIsActive, setIdFocus } = props;
+    const { isActive, title, id, setIsActive, setIdFocus, category, setResults } = props;
     const [optionActive, setOptionActive] = useState(8);
 
     const handleClickLabel = (e, option) => {
@@ -12,6 +12,12 @@ export const Question = (props) => {
         setOptionActive(option)
         setIsActive(id + 1);
         setIdFocus(id + 1);
+        
+        setResults((results) => {
+            results[category][id] = option;
+
+            return results;
+        })
     }
 
     const handleClickQuestion = (e) => {

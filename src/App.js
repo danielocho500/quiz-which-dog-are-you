@@ -9,7 +9,17 @@ function App() {
 
     const [isActive, setIsActive] = useState(0)
     const [idFocus, setIdFocus] = useState(0);
+    
+    const [results, setResults] = useState({
+      0: {},
+      1: {},
+      2: {},
+      3: {},
+      4: {},
+    })
+
     const idFocusModified = useRef(false);
+
     
     useEffect(() => {
       if(idFocusModified.current){
@@ -49,9 +59,13 @@ function App() {
         }  
       })
       if(isCorrect){
-        console.log('esoo');
+        readForm();
       }
     }
+
+    const readForm = () => {
+      console.log(results);
+    } 
 
     return (
       <div className="App">
@@ -60,8 +74,8 @@ function App() {
         </div>
 
         <form>
-          {questions.map(({ id, title }) => (
-            <Question key={ id } title={ title } isActive={ (isActive === id) } setIsActive={ setIsActive } id= {id} setIdFocus={setIdFocus}/>
+          {questions.map(({ id, title, category }) => (
+            <Question key={ id } title={ title } isActive={ (isActive === id) } setIsActive={ setIsActive } id= {id} setIdFocus={setIdFocus} category={category} setResults={setResults} />
           ))}
 
           <div className='container__perso btn_cont'>

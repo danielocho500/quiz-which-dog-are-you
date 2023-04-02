@@ -1,0 +1,37 @@
+.dogCard{
+    border: 1px solid black;
+    width: 60%;
+    height: 400px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+
+.dogCard__name{
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.55) 100%);
+    bottom: 0;
+    display: flex;
+    flex-direction: column; 
+    height: 70px;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    -webkit-text-stroke: 2px black;
+}
+
+.dogCard__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

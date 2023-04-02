@@ -1,0 +1,87 @@
+.result{
+    padding-top: 5rem;
+}
+
+.result h1 {
+    color: gray;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+}
+
+.result__dogName{
+    color: black;
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.result__image{
+    text-align: center;
+}
+
+.result__image img {
+    display: inline-block;
+    max-width: 300px;
+    max-height: 40rem;
+    border-radius: 5%;
+    border: 01px solid black;
+}
+
+.result__text{
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 2rem;
+    text-align: center;
+}
+
+.barPercentage{
+    width: 100%;
+    height: 30px;
+    background-color: #774CAF;
+    border: black 1px solid;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    direction: rtl;
+}
+
+.percentage{
+    height: 100%;
+    width: 0%;
+    background-color: #4CAF50;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: width 0.3s ease-in-out;
+}
+
+.bar{
+    margin-bottom: 2rem;
+}
+
+.bar__parameters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: gray;
+    font-weight: 600;
+}
+
+.bar__positive{
+    padding-left: 1rem;
+}
+
+.bar__negative{
+    padding-right: 2rem;
+    font-weight: 600;
+}
+
+.dogs_cards{
+    margin-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.dogCard__title{
+    text-align: center;
+}

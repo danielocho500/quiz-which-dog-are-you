@@ -88,6 +88,26 @@ export const Quiz = (props) => {
       return ((sum/i) * 100) / 6;
     }
 
+    const convertSortableToObject = (sortabled, cat) => {
+      return {
+        mainDog: {
+          ...Dogs[sortabled[0][2] - 1]
+        },
+        othersDogs: [
+          {
+            ...Dogs[sortabled[1][2] - 1]
+          },
+          {
+            ...Dogs[sortabled[2][2] - 1]
+          },
+          {
+            ...Dogs[sortabled[3][2] - 1]
+          },
+        ],
+        categories: cat,
+      }
+    }
+
     const getDogo = (cat) => {
 
       const differences = {}
@@ -132,11 +152,13 @@ export const Quiz = (props) => {
         sortable.push([dog, differences[dog], id]);
       }
 
-      const uwu = sortable.sort(function(a, b) {
+      const dogsSortabled = sortable.sort(function(a, b) {
           return a[1] - b[1];
       });
 
-      setDogsInfo(uwu.slice(0 , 4))
+      const dogsObject = convertSortableToObject(dogsSortabled.slice(0 , 4), cat);
+
+      setDogsInfo(dogsObject)
       setIsFinished(true)
     }
 

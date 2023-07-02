@@ -1,184 +1,186 @@
-import React from 'react'
-import { useEffect, useRef, useState } from 'react';
-import './App.css';
-import Header from './components/Header';
-import { Question } from './components/Question';
-import { Dogs } from './dogs';
-import { questions } from './questions';
+import React from "react";
+import { useEffect, useRef, useState } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import { Question } from "./components/Question";
+import { Dogs } from "./dogs";
+import { questions } from "./questions";
 
 export const Quiz = (props) => {
-    const {setIsFinished, setDogsInfo} = props
+  const { setIsFinished, setDogsInfo } = props;
 
-    const [isActive, setIsActive] = useState(0)
-    const [idFocus, setIdFocus] = useState(0);
-    
-    const [results, setResults] = useState({
-      0: {},
-      1: {},
-      2: {},
-      3: {},
-      4: {},
-    })
+  const [isActive, setIsActive] = useState(0);
+  const [idFocus, setIdFocus] = useState(0);
 
-    const idFocusModified = useRef(false);
+  const [results, setResults] = useState({
+    0: {},
+    1: {},
+    2: {},
+    3: {},
+    4: {},
+  });
 
-    
-    useEffect(() => {
-      if(idFocusModified.current){
-        try{
-          const element = document.getElementById(idFocus)
-          element.scrollIntoView({behavior: 'smooth'});
-        }
-        catch{
-          const element = document.getElementById('btn_dog');
-          element.scrollIntoView({behavior: 'smooth'});
-        }
+  const idFocusModified = useRef(false);
+
+  useEffect(() => {
+    if (idFocusModified.current) {
+      try {
+        const element = document.getElementById(idFocus);
+        element.scrollIntoView({ behavior: "smooth" });
+      } catch {
+        const element = document.getElementById("btn_dog");
+        element.scrollIntoView({ behavior: "smooth" });
       }
-      else{
-        idFocusModified.current = true;
+    } else {
+      idFocusModified.current = true;
+    }
+  }, [idFocus]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    let isCorrect = true;
+
+    questions.every((quest) => {
+      try {
+        const q = document.querySelector(
+          `input[name="${quest.id}"]:checked`
+        ).value;
+        if (q) return true;
+        else return false;
+      } catch {
+        isCorrect = false;
+        setIsActive(quest.id);
+        setIdFocus(quest.id);
+        const element = document.getElementById(quest.id);
+        element.scrollIntoView({ behavior: "smooth" });
+        return false;
       }
-    
-    }, [idFocus])
-    
+    });
+    if (isCorrect) {
+      readForm();
+    }
+  };
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
+  const readForm = () => {
+    let categories = {};
 
-      let isCorrect = true;
-
-      questions.every(quest => {
-        try{
-          const q = document.querySelector(`input[name="${quest.id}"]:checked`).value;
-          return true;
-        }
-        catch{
-          isCorrect = false;
-          setIsActive(quest.id)
-          setIdFocus(quest.id)
-          const element = document.getElementById(quest.id)
-          element.scrollIntoView({behavior: 'smooth'});
-          return false;
-        }  
-      })
-      if(isCorrect){
-        readForm();
-      }
+    for (const [key, value] of Object.entries(results)) {
+      const avrg = getAverage(value);
+      categories[key] = avrg / 20;
     }
 
-    const readForm = () => {
+    getDogo(categories);
+  };
 
-      let categories = {}
-
-      for (const [key, value] of Object.entries(results)) {
-        const avrg = getAverage(value)
-        categories[key] = avrg / 20;
-      }
-
-      getDogo(categories)
-    } 
-
-    const getAverage = (value) => {
-      let i = 0;
-      let sum = 0;
-      for (const num of Object.entries(value)){
-        sum = sum + parseInt(num[1]);
-        i++;
-      }
-
-      return ((sum/i) * 100) / 6;
+  const getAverage = (value) => {
+    let i = 0;
+    let sum = 0;
+    for (const num of Object.entries(value)) {
+      sum = sum + parseInt(num[1]);
+      i++;
     }
 
-    const convertSortableToObject = (sortabled, cat) => {
-      return {
-        mainDog: {
-          ...Dogs[sortabled[0][2] - 1]
+    return ((sum / i) * 100) / 6;
+  };
+
+  const convertSortableToObject = (sortabled, cat) => {
+    return {
+      mainDog: {
+        ...Dogs[sortabled[0][2] - 1],
+      },
+      othersDogs: [
+        {
+          ...Dogs[sortabled[1][2] - 1],
         },
-        othersDogs: [
-          {
-            ...Dogs[sortabled[1][2] - 1]
-          },
-          {
-            ...Dogs[sortabled[2][2] - 1]
-          },
-          {
-            ...Dogs[sortabled[3][2] - 1]
-          },
-        ],
-        categories: cat,
-      }
-    }
+        {
+          ...Dogs[sortabled[2][2] - 1],
+        },
+        {
+          ...Dogs[sortabled[3][2] - 1],
+        },
+      ],
+      categories: cat,
+    };
+  };
 
-    const getDogo = (cat) => {
+  const getDogo = (cat) => {
+    const differences = {};
 
-      const differences = {}
+    Dogs.forEach((dog) => {
+      let difference = 0;
+      Object.keys(dog.carac).forEach((carNumber) => {
+        const caracReal = cat[carNumber];
+        const caracDog = dog.carac[carNumber];
 
-      Dogs.forEach(dog => {
-        let difference = 0;
-        Object.keys(dog.carac).forEach(carNumber => {
-          
-          const caracReal = cat[carNumber]
-          const caracDog = dog.carac[carNumber]
+        let size = "m";
 
-          let size = 'm'  
-          
-          if(parseInt(carNumber) === 4){
-          
-            if(caracReal > 3.5)
-              size = 'c'
-            else if (caracReal < 1.5)
-              size = 'g'
+        if (parseInt(carNumber) === 4) {
+          if (caracReal > 3.5) size = "c";
+          else if (caracReal < 1.5) size = "g";
 
-            if(size !== caracDog){
-              difference += 12
-            }
-
-            return
+          if (size !== caracDog) {
+            difference += 12;
           }
 
-          if(caracReal > caracDog)
-            difference += caracReal - caracDog
-          else if (caracDog > caracReal)
-            difference += caracDog - caracReal
+          return;
+        }
 
-        })        
-
-        differences[dog.name] = difference;
-      })
-
-      let sortable = [];
-      let id = 0
-      for (var dog in differences) {
-        id++;
-        sortable.push([dog, differences[dog], id]);
-      }
-
-      const dogsSortabled = sortable.sort(function(a, b) {
-          return a[1] - b[1];
+        if (caracReal > caracDog) difference += caracReal - caracDog;
+        else if (caracDog > caracReal) difference += caracDog - caracReal;
       });
 
-      const dogsObject = convertSortableToObject(dogsSortabled.slice(0 , 4), cat);
+      differences[dog.name] = difference;
+    });
 
-      setDogsInfo(dogsObject)
-      setIsFinished(true)
+    let sortable = [];
+    let id = 0;
+    for (var dog in differences) {
+      id++;
+      sortable.push([dog, differences[dog], id]);
     }
 
-    return (
-      <div className="App">
-        <div className='top'>
-          <Header />
-        </div>
+    const dogsSortabled = sortable.sort(function (a, b) {
+      return a[1] - b[1];
+    });
 
-        <form>
-          {questions.map(({ id, title, category, positive }) => (
-            <Question key={ id } title={ title } isActive={ (isActive === id) } setIsActive={ setIsActive } id= {id} setIdFocus={setIdFocus} category={category} setResults={setResults} isPositive={positive} />
-          ))}
+    const dogsObject = convertSortableToObject(dogsSortabled.slice(0, 4), cat);
 
-          <div className='container__perso btn_cont'>
-            <input type={'submit'} value="Calcular" className='btn_dog' id='btn_dog' onClick={handleSubmit}/>
-          </div>
+    setDogsInfo(dogsObject);
+    setIsFinished(true);
+  };
 
-        </form>
-        
+  return (
+    <div className="App">
+      <div className="top">
+        <Header />
       </div>
+
+      <form>
+        {questions.map(({ id, title, category, positive }) => (
+          <Question
+            key={id}
+            title={title}
+            isActive={isActive === id}
+            setIsActive={setIsActive}
+            id={id}
+            setIdFocus={setIdFocus}
+            category={category}
+            setResults={setResults}
+            isPositive={positive}
+          />
+        ))}
+
+        <div className="container__perso btn_cont">
+          <input
+            type={"submit"}
+            value="Calcular"
+            className="btn_dog"
+            id="btn_dog"
+            onClick={handleSubmit}
+          />
+        </div>
+      </form>
+    </div>
   );
-}
+};

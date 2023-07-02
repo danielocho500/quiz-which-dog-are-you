@@ -35,7 +35,10 @@ export const Results = (props) => {
             <p> {mainDog.name} </p>{" "}
           </div>
           <div className="result__image">
-            <img src={`${baseURI}dogs/${mainDog.id}.jpg`} />
+            <img
+              src={`${baseURI}dogs/${mainDog.id}.jpg`}
+              alt="imagen de dogoncio"
+            />
           </div>
         </div>
 

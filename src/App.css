@@ -1,8 +1,6 @@
 :root{
   --white: #fff;
   --black: #111;
-  --gray: #3a3a40;
-
   --principal-font: 'Raleway', sans-serif;
 }
 
@@ -95,7 +93,7 @@ h1{
 }
 
 .card_text{
-  color: gray;
+  color: #574327;
 }
 
 .btn_cont{
@@ -105,17 +103,18 @@ h1{
 }
 
 .btn_dog{
-  background-color: #D94536;  
+  background-color: #af8d5c;  
   padding: 2rem;
-  border-color: #D94536;
+  border-color: #af8d5c;
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
   transition: all 0.5s;
+  margin-bottom: 2rem;
 }
 
 .btn_dog:hover{
-  background-color: #c92e1e;
+  background-color: #77603f;
 }
 
 /* Question */
@@ -134,23 +133,23 @@ input[type="radio"]{
 }
 
 input[type="radio"]:checked + .option_1, input[type="radio"]:checked + .option_2, input[type="radio"]:checked + .option_3 {
-  background-color: green;
+  background-color: #574327;
 }
 
 input[type="radio"]:checked + .neutral{
-  background-color: grey;
+  background-color: #574327;
 }
 
 input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5, input[type="radio"]:checked + .option_6 {
-  background-color: purple;
+  background-color: #574327;
 }
 
 .accord_selected{
-  background-color: green;
+  background-color: #574327;
 }
 
 .disaccord_selected{
-  background-color: purple;
+  background-color: #574327;
 }
 
 @media (min-width: 650px){
@@ -164,7 +163,7 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 .question__active{
   margin-top: 3rem;
   margin-bottom: 3rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #574327;
   padding-bottom: 2rem;
   opacity: 1;
 }
@@ -172,7 +171,7 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 .question__disactive {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #574327;
   padding-bottom: 2rem;
   opacity: .4;
 }
@@ -185,7 +184,7 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .accord{
-  color: green;
+  color: #574327;
   grid-column: 1/4;
   grid-row-start: 2;
 }
@@ -204,7 +203,7 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .disaccord{
-  color: purple;
+  color: #574327;
   grid-column-start: 4;
   grid-column-end: 8;
   grid-row-start: 2;
@@ -242,7 +241,7 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 .option_1{
   width: 5rem;
   height: 5rem;
-  border-color: green;
+  border-color: #574327;
   grid-column: 1/2;
 }
 
@@ -261,13 +260,13 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .option_1:hover{
-  background-color: green;
+  background-color: #574327;
 }
 
 .option_2{
   width: 3.5rem;
   height: 3.5rem;
-  border-color: green;
+  border-color: #574327;
   grid-column: 2/3;
 }
 
@@ -286,13 +285,13 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .option_2:hover{
-  background-color: green;
+  background-color: #574327;
 }
 
 .option_3{
   width: 2.5rem;
   height: 2.5rem;
-  border-color: green;
+  border-color: #574327;
   grid-column: 3/4;
 }
 
@@ -311,12 +310,12 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .option_3:hover{
-  background-color: green;
+  background-color: #574327;
 }
 
 .neutral{
   grid-column: 4/5;
-  border-color: grey;
+  border-color: #574327;
 }
 
 @media (min-width: 650px){
@@ -334,13 +333,13 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .neutral:hover{
-  background-color: grey;
+  background-color: #574327;
 }
 
 .option_4{
   width: 2.5rem;
   height: 2.5rem;
-  border-color: purple;
+  border-color: #574327;
   grid-column: 5/6;
 }
 
@@ -359,13 +358,13 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .option_4:hover{
-  background-color: purple;
+  background-color: #574327;
 }
 
 .option_5{
   width: 3.5rem;
   height: 3.5rem;
-  border-color: purple;
+  border-color: #574327;
   grid-column: 6/7;
 }
 
@@ -384,13 +383,13 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .option_5:hover{
-  background-color: purple;
+  background-color: #574327;
 }
 
 .option_6{
   width: 5rem;
   height: 5rem;
-  border-color: purple;
+  border-color: #574327;
   grid-column: 7/8;
 }
 
@@ -409,5 +408,5 @@ input[type="radio"]:checked + .option_4, input[type="radio"]:checked + .option_5
 }
 
 .option_6:hover{
-  background-color: purple;
+  background-color: #574327;
 }

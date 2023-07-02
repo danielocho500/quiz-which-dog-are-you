@@ -1,138 +1,138 @@
 export const questions = [
     {
         id: 0,
-        title: "No se te dificulta levantarte de la cama",
+        title: "Me resulta sencillo levantarme de la cama",
         category: 0,
         positive: 0,
     },
     {
         id: 1,
-        title: "Normalmente te sientes motivado, con mucha energía",
+        title: "Normalmente me siento motivado, con mucha energía",
         category: 0,
         positive: 1,
     },  
     {
         id: 2,
-        title: "Te sientes entusiasmado cuando caminas por la naturaleza",
+        title: "Me siento entusiasmado cuando camino por la naturaleza",
         category: 0,
         positive: 1,
     },
     {
         id: 3,
-        title: "Te gusta más salir a pasear que quedarte en casa",
+        title: "Me gusta más salir a pasear que quedarme en casa",
         category: 0,
         positive: 1,
     },
     {
         id: 4,
-        title: "Realizas actividad física con frecuencia ",
+        title: "Realizó actividad física con frecuencia ",
         category: 0,
         positive: 1
     },
     {
         id: 5,
-        title: "Te resulta fácil presentarte a personas nuevas",
+        title: "Me resulta fácil presentarme a personas nuevas",
         category: 1,
         positive: 1,
     },
     {
         id: 6,
-        title: "Sueles iniciar las conversaciones",
+        title: "Suelo iniciar las conversaciones",
         category: 1,
         positive: 1,
     },
     {
         id: 7,
-        title: "Te gusta ser el centro de atención",
+        title: "Me gusta ser el centro de atención",
         category: 1,
         positive: 1
     },
     {
         id: 8,
-        title: "Se te facilita implicarte en actividades sociales en nuevos entornos, como un nuevo trabajo o nueva escuela",
+        title: "Se me facilita adentrarme en actividades sociales en nuevos entornos, como un nuevo trabajo o nueva escuela",
         category: 1,
         positive: 1
     },
     {
         id: 9,
-        title: "Te gusta conocer gente nueva",
+        title: "Me gusta conocer gente nueva",
         category: 1,
         positive: 1,
     },{
         id: 10,
-        title: "Te consideras una persona extrovertida ",
+        title: "Me considero una persona extrovertida ",
         category: 2,
         positive: 1,
     }
     ,{
         id: 11,
-        title: "Tomas confianza con facilidad",
+        title: "Siento confianza con facilidad",
         category: 2,
         positive: 1,
     }
     ,{
         id: 12,
-        title: "Te gusta compartir tu vida en redes sociales",
+        title: "Me gusta compartir mi vida en redes sociales",
         category: 2,
         positive: 1,
     }
     ,{
         id: 13,
-        title: "Te consideras una persona de muchos amigos más que de tener un círculo pequeño",
+        title: "Me considero una persona de muchos amigos más que de tener un círculo pequeño",
         category: 2,
         positive: 1,
     }
     ,{
         id: 14,
-        title: "No eres una persona quisquillosa con su espacio personal ",
+        title: "No soy una persona quisquillosa con su espacio personal ",
         category: 2,
         positive: 0,
     }
     ,{
         id: 15,
-        title: "Te gusta seguir instrucciones",
+        title: "Me gusta seguir instrucciones y planes detallados",
         category: 3,
         positive: 1,
     }
     ,{
         id: 16,
-        title: "Prefieres tener un plan definido a improvisar en el momento",
+        title: "Prefiero tener un plan definido a improvisar en el momento",
         category: 3,
         positive: 1,
     }
     ,{
         id: 17,
-        title: "Te gusta complacer a las otras personas",
+        title: "Me gusta complacer a las otras personas",
         category: 3,
         positive: 1,
     }
     ,{
         id: 18,
-        title: "Dejas que otras personas influyan en tus acciones",
+        title: "Dejo que otras personas influyan en mis acciones",
         category: 3,
         positive: 1,
     }
     ,{
         id: 19,
-        title: "Raramente extravias tus cosas",
+        title: "Raramente extravió mis cosas",
         category: 3,
         positive: 0,
     }
     ,{
         id: 20,
-        title: "Cabes perfectamente en una cama individual estando estirado/a",
+        title: "Entro perfectamente en una cama individual",
         category: 4,
         positive: 0,
     }
     ,{
         id: 21,
-        title: "Raramente te piden alcanzar cosas que están en lugares altos, por ejemplo, encima de una repisa",
+        title: "Constantemente me piden alcanzar cosas que están en lugares altos, por ejemplo, encima de una repisa",
         category: 4,
-        positive: 1,
+        positive: 0,
     }
     ,{
         id: 22,
-        title: "Las personas piensan que eres pequeño/a",
+        title: "Las personas piensan que soy pequeño/a",
         category: 4,
         positive: 0,
     }

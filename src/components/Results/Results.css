@@ -2,6 +2,14 @@
     padding-top: 5rem;
 }
 
+@media (min-width: 820px){
+    .dogs_cards{
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+    }
+}
+
 .result h1 {
     color: gray;
     font-size: 30px;
@@ -20,6 +28,7 @@
 
 .result__image{
     text-align: center;
+    margin-bottom: 10rem;
 }
 
 .result__image img {
@@ -35,6 +44,15 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 2rem;
     text-align: center;
+}
+
+@media (min-width: 820px){
+    .result__grid{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .barPercentage{
@@ -54,6 +72,12 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     transition: width 0.3s ease-in-out;
+}
+
+@media (min-width: 820px){
+    .bars{
+        width: 50%;
+    }
 }
 
 .bar{

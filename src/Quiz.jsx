@@ -68,7 +68,10 @@ export const Quiz = (props) => {
     for (const [key, value] of Object.entries(results)) {
       const avrg = getAverage(value);
       categories[key] = avrg / 20;
+      console.log(avrg);
     }
+
+    console.log(categories);
 
     getDogo(categories);
   };

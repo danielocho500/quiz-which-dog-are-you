@@ -126,13 +126,13 @@ export const questions = [
     }
     ,{
         id: 21,
-        title: "Constantemente me piden alcanzar cosas que están en lugares altos, por ejemplo, encima de una repisa",
+        title: "Las personas piensan que soy pequeño/a",
         category: 4,
         positive: 0,
-    }
-    ,{
+    },
+    {
         id: 22,
-        title: "Las personas piensan que soy pequeño/a",
+        title: "Raramente me piden ayuda para bajar cosas, por ejemplo, de un estante",
         category: 4,
         positive: 0,
     }

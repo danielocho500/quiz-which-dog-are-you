@@ -1,111 +1,114 @@
-.result{
-    padding-top: 5rem;
+.result {
+  padding-top: 5rem;
 }
 
-@media (min-width: 820px){
-    .dogs_cards{
-        display: flex;
-        flex-direction: row;
-        gap: 3rem;
-    }
+@media (min-width: 820px) {
+  .dogs_cards {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+  }
 }
 
 .result h1 {
-    color: gray;
-    font-size: 30px;
-    display: block;
-    text-align: center;
+  color: gray;
+  font-size: 30px;
+  display: block;
+  text-align: center;
 }
 
-.result__dogName{
-    color: black;
-    font-size: 28px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 2rem;
+.result__dogName {
+  color: black;
+  font-size: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 2rem;
 }
 
-.result__image{
-    text-align: center;
-    margin-bottom: 10rem;
+.result__image {
+  text-align: center;
+  margin-bottom: 10rem;
 }
 
 .result__image img {
-    display: inline-block;
-    max-width: 300px;
-    max-height: 40rem;
-    border-radius: 5%;
-    border: 01px solid black;
+  display: inline-block;
+  max-width: 300px;
+  max-height: 40rem;
+  border-radius: 5%;
+  border: 01px solid black;
 }
 
-.result__text{
-    font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 2rem;
-    text-align: center;
+.result__text {
+  font-size: 18px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding: 2rem;
+  text-align: center;
 }
 
-@media (min-width: 820px){
-    .result__grid{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
-
-.barPercentage{
-    width: 100%;
-    height: 30px;
-    background-color: #774CAF;
-    border: black 1px solid;
-    border-radius: 15px;
-    margin-bottom: 10px;
-    direction: rtl;
-}
-
-.percentage{
-    height: 100%;
-    width: 0%;
-    background-color: #4CAF50;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    transition: width 0.3s ease-in-out;
-}
-
-@media (min-width: 820px){
-    .bars{
-        width: 50%;
-    }
-}
-
-.bar{
-    margin-bottom: 2rem;
-}
-
-.bar__parameters{
+@media (min-width: 820px) {
+  .result__grid {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    color: gray;
-    font-weight: 600;
+  }
 }
 
-.bar__positive{
-    padding-left: 1rem;
+.barPercentage {
+  width: 100%;
+  height: 30px;
+  background-color: #774caf;
+  border: black 1px solid;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  direction: rtl;
 }
 
-.bar__negative{
-    padding-right: 2rem;
-    font-weight: 600;
+.percentage {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  transition: width 0.3s ease-in-out;
 }
 
-.dogs_cards{
-    margin-top: 4rem;
-    padding-bottom: 2rem;
+@media (min-width: 820px) {
+  .bars {
+    width: 50%;
+  }
 }
 
-.dogCard__title{
-    text-align: center;
+.bar {
+  margin-bottom: 2rem;
+}
+
+.bar__parameters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: gray;
+  font-weight: 600;
+}
+
+.bar__positive {
+  padding-left: 1rem;
+}
+
+.bar__negative {
+  padding-right: 2rem;
+  font-weight: 600;
+}
+
+.dogs_cards {
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.dogCard__title {
+  text-align: center;
 }
